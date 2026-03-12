@@ -1,0 +1,13 @@
+{
+  "name": "herokuapp-login-tests",
+  "version": "1.0.0",
+  "description": "QA Lead assessment - Login UI tests",
+  "scripts": {
+    "test": "npx playwright test",
+    "test:headed": "npx playwright test --headed",
+    "report": "npx playwright show-report"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.58.0"
+  }
+}
