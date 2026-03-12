@@ -52,29 +52,33 @@ Positive Tests:
 
 1. Successful login with valid credentials
 - Navigate to login page
-- Enter valid username and password
+- Enter valid username and password and login
 - Verify redirect to secure page
 - Verify success message is displayed
 - Verify that the logout link is visible
 
 2. Logout functionality
-- Verify a logged in user can logout successfully
+- Login with valid credentials (reuse steps from successful login test above)
+- Logout from the secure logged in page
+- Verify redirect to the login page
 
 Negative Tests:
 
 1. Login with invalid username
-- Verify error message
-- Verify user remains on login page
 - Verify user sees appropriate error message
+- Verify user remains on login page
 
 2. Login with invalid password
-- Verify error message
-- Verify user remains on login page
 - Verify user sees appropriate error message
+- Verify user remains on login page
 
-3. Additional negative tests
-- Verify proper error handling by the login page on empty username
-- Verify proper error handling by the login page on empty password
+3. Login with empty username
+- Verify user sees appropriate error message
+- Verify user remains on login page
+
+4. Login with empty password
+- Verify user sees appropriate error message
+- Verify user remains on login page
 
 
 ## Setup Instructions
@@ -119,7 +123,7 @@ Some improvements that could be implemented for a larger automation framework in
 
 - Integration with CI/CD systems like GitHub actions, Jenkins, etc.
 - Parallel cross-browser testing to simulate various browsers and viewports
-- Environment configuration to read sensitive information (like passwords/bearer tokens) from CI CD secrets/variables
+- Environment configuration to read sensitive information (like passwords/bearer tokens) from CI/CD secrets/variables
 - Test retries for better reliability and tagging for test categorization
 - Additional negative test cases like:
     - Special characters in username field
@@ -128,7 +132,7 @@ Some improvements that could be implemented for a larger automation framework in
     - Case sensitivity of username/password field values
 - Data driven testing for additional edge case and negative scenarios
 - Automatic failure notifications from the tests into messaging systems such as Slack, etc.
-- Integrate the tests metrics with observability tools like Datadog for better tests visibility and flaky tests management policies
+- Integrate the test metrics with observability tools like Datadog for better tests visibility and flaky tests management policies
 
 
 Notes:
