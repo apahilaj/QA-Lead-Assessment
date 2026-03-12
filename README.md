@@ -88,7 +88,7 @@ Negative Tests:
     git clone https://github.com/apahilaj/QA-Lead-Assessment.git
     ```
 
-2. Install dependencies
+2. Install dependencies from the project root directory
     ```bash
     npm install
     ```
