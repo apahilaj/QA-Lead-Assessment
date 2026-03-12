@@ -1,4 +1,4 @@
-# Heroku login automation
+# Playwright Login Test Automation for Heroku Demo Application
 
 This project contains a small test automation suite created for a QA Lead take-home assessment at Origami Risk.
 
@@ -14,26 +14,36 @@ https://the-internet.herokuapp.com/login
 - Playwright Test Runner
 
 
-## Framework project structure
+## Project structure
 
-Tests with valid and invalid user/password combination:
-    tests/
-        login.spec.js 
+Test cases covering valid and invalid username/password combinations:
+```bash
+tests/
+    login.spec.js 
+```
 
 Page object classes to encapsulate interactions on login and secure pages:
-    pages/
-        loginPage.js
-        secureLoggedInPage.js
+```bash
+pages/
+    loginPage.js
+    secureLoggedInPage.js
+```
 
-File to hold user test data:
-    fixtures/
-        loginData.js 
+File containing test user data:
+```bash
+fixtures/
+    loginData.js 
+```
 
 Playwright configuration file:
-    playwright.config.js 
+```bash
+playwright.config.js 
+```
 
 Dependencies and script aliases:
-    package.json
+```bash
+package.json
+```
 
 
 ## Test cases
@@ -60,7 +70,7 @@ Negative Tests:
 2. Login with invalid password
 - Verify error message
 - Verify user remains on login page
-- Verify user seems appropriate error message
+- Verify user sees appropriate error message
 
 3. Additional negative tests
 - Verify proper error handling by the login page on empty username
@@ -70,37 +80,44 @@ Negative Tests:
 ## Setup Instructions
 
 1. Clone repository
-
+    ```bash
     git clone https://github.com/apahilaj/QA-Lead-Assessment.git
+    ```
 
 2. Install dependencies
-
+    ```bash
     npm install
+    ```
 
 3. Install Playwright browsers
-
+    ```bash
     npx playwright install
+    ```
 
 
 ## Running Tests
 
 Run all tests in silent headless mode
-    cd tests
+    ```bash
     npm run test 
+    ```
 
 Run all tests in interactive headed mode
-    cd tests
+    ```bash
     npm run test:headed
+    ```
 
 Open HTML report, after running the tests
+    ```bash
     npm run report
+    ```
 
 
 ## Possible future improvements and notes
 
 Some improvements that could be implemented for a larger automation framework include:
 
-- Integration with CI CD systems like GitHub actions, Jenkins,etc
+- Integration with CI/CD systems like GitHub actions, Jenkins, etc.
 - Parallel cross-browser testing to simulate various browsers and viewports
 - Environment configuration to read sensitive information (like passwords/bearer tokens) from CI CD secrets/variables
 - Test retries for better reliability and tagging for test categorization
@@ -115,7 +132,7 @@ Some improvements that could be implemented for a larger automation framework in
 
 
 Notes:
-- I've added two page object classes (loginPage and secureLoggedInPage) since each unique page should be mapped to a separate class file.
+- I've added two page object classes (loginPage and secureLoggedInPage) since each unique page should be mapped to a separate class file, for scalability and maintenance.
 - These tests are intentionally kept simple to keep the example easy to understand.
 - By default, I've configured to run all the tests in parallel.  If you want to run them serially, remove the line: 'fullyParallel: true' from the playwright.config.js file.
 - .gitignore file has been added to exclude the node modules, Playwright reports and test results from getting committed to the repository.
