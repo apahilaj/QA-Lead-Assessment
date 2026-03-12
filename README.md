@@ -98,19 +98,19 @@ Negative Tests:
 ## Running Tests
 
 Run all tests in silent headless mode
-    ```bash
-    npm run test 
-    ```
+```bash
+npm run test
+```
 
 Run all tests in interactive headed mode
-    ```bash
-    npm run test:headed
-    ```
+```bash
+npm run test:headed
+```
 
 Open HTML report, after running the tests
-    ```bash
-    npm run report
-    ```
+```bash
+npm run report
+```
 
 
 ## Possible future improvements and notes
